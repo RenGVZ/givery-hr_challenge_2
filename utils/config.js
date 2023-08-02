@@ -1,4 +1,4 @@
-require('dotenv').config()
+require("dotenv").config()
 
 const PORT = process.env.PORT
 const HOST = process.env.HOST
@@ -6,10 +6,23 @@ const USER = process.env.USER
 const PASSWORD = process.env.PASSWORD
 const DATABASE = process.env.DATABASE
 
+RENDER_HOST_NAME = process.env.RENDER_HOST_NAME
+RENDER_USER = process.env.RENDER_USER
+RENDER_PASSWORD = process.env.RENDER_PASSWORD
+RENDER_INTERNAL_DATABASE_URL = process.env.RENDER_INTERNAL_DATABASE_URL
+RENDER_CONNECTION = process.env.RENDER_CONNECTION
+RENDER_DATABASE = process.env.RENDER_DATABASE
+
 module.exports = {
   PORT,
   HOST,
   USER,
   PASSWORD,
-  DATABASE
+  DATABASE,
+  RENDER_HOST_NAME,
+  RENDER_USER,
+  RENDER_PASSWORD,
+  RENDER_INTERNAL_DATABASE_URL,
+  RENDER_CONNECTION,
+  RENDER_DATABASE,
 }
