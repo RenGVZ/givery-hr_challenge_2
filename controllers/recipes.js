@@ -78,20 +78,20 @@ recipesRouter.patch("/:id", async (req, res) => {
     const updatedRecipe = await queries.updateRecipe(id, updatedData)
     if (updatedRecipe) {
       // get the updated recipe
-      const recipe = await queries.getRecipe(id)
-      const formattedRecipe = {
-        message: "Recipe successfully updated!",
-        recipe: [
-          {
-            title: recipe.title,
-            making_time: recipe.making_time,
-            serves: recipe.serves,
-            ingredients: recipe.ingredients,
-            cost: recipe.cost,
-          },
-        ],
-      }
-      res.json(formattedRecipe).status(200)
+      // const recipe = await queries.getRecipe(id)
+      // const formattedRecipe = {
+      //   message: "Recipe successfully updated!",
+      //   recipe: [
+      //     {
+      //       title: recipe.title,
+      //       making_time: recipe.making_time,
+      //       serves: recipe.serves,
+      //       ingredients: recipe.ingredients,
+      //       cost: recipe.cost,
+      //     },
+      //   ],
+      // }
+      res.json(updatedRecipe).status(200)
     } else {
       res.status(404).json({ error: "Recipe not found" })
     }

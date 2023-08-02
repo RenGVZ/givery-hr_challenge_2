@@ -34,15 +34,19 @@ const insertRecipe = async (recipeData) => {
 }
 
 const getRecipe = async (id) => {
-  const [rows] = await db.query(
-    `
-  SELECT *
-  FROM recipes
-  WHERE id = ?
-  `,
-    [id]
-  )
-  return rows[0]
+  try {
+    const [rows] = await db.query(
+      `
+    SELECT *
+    FROM recipes
+    WHERE id = ?
+    `,
+      [id]
+    )
+    return rows[0]
+  } catch (error) {
+    throw error
+  }
 }
 
 const updateRecipe = async (recipeId, updatedData) => {
