@@ -108,7 +108,7 @@ recipesRouter.delete("/:id", async (req, res) => {
   try {
     const deletedRecipe = await queries.deleteRecipeById(id)
     if (deletedRecipe) {
-      res.json(deletedRecipe).status(200).message("Recipe successfully removed!")
+      res.status(200).json({ message: "Recipe successfully removed!" })
     } else {
       res.status(404).json({ error: "No recipe found" })
     }
