@@ -3,10 +3,10 @@ const config = require("../utils/config")
 
 const db = mysql
   .createConnection({
-    host: config.RENDER_HOST_NAME,
-    user: config.RENDER_USER,
-    password: config.RENDER_PASSWORD,
-    database: config.RENDER_DATABASE,
+    host: config.DB_HOST_NAME,
+    user: config.DB_USER,
+    password: config.DB_PASSWORD,
+    database: config.DB_DATABASE,
   }).promise()
 
 db.connect((err) => {
